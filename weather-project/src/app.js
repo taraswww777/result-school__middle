@@ -1,5 +1,5 @@
 import "./app.scss";
-import {createDiv} from "./utils";
+import {createDiv, createElement} from "./utils";
 import {WEATHERS} from "./constants";
 import {WeatherList} from "./components/weather-list/weather-list";
 
@@ -9,6 +9,7 @@ const state = {
 
 export const initApp = () => {
     const page = createDiv({className: 'app'});
+    const title = createElement('h1', {className: 'app__title', innerHTML: 'Weather sounds'});
     const weathers = createDiv({className: 'app__weathers'});
 
     const refreshApp = () => {
@@ -24,6 +25,7 @@ export const initApp = () => {
 
     weathers.append(WeatherList({weathers: WEATHERS, onClickWeather}));
 
+    page.append(title)
     page.append(weathers)
     refreshApp();
     return page;

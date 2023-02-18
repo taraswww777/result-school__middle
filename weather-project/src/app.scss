@@ -3,10 +3,25 @@
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
 
-  &__weathers{
-    height: 60%;
+  &__title {
+    width: 100%;
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 5px 0 5px #000,
+    0 5px 5px #000,
+    -5px 0 5px #000,
+    0 -5px 5px #000;
+  }
+
+  &__weathers {
     display: flex;
     align-items: flex-end;
+    width: 100%;
   }
 }
