@@ -4,7 +4,8 @@ import {WEATHERS} from "./constants";
 import {WeatherList} from "./components/weather-list/weather-list";
 
 const state = {
-    currentWeather: WEATHERS[0]
+    currentWeather: WEATHERS[0],
+    player: new Audio(WEATHERS[0].soundUrl)
 };
 
 export const initApp = () => {
@@ -18,8 +19,20 @@ export const initApp = () => {
 
 
     const onClickWeather = (weather) => {
-        console.log('weather:', weather);
-        state.currentWeather = weather;
+        if (weather.code !== state.currentWeather.code) {
+            state.player.pause();
+            state.player.src = weather.soundUrl;
+            state.player.loop = true;
+            state.player.play();
+            state.currentWeather = weather;
+        } else {
+            if (state.player.paused) {
+                state.player.play();
+            } else {
+                state.player.pause();
+            }
+        }
+
         refreshApp();
     }
 
