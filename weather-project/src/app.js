@@ -2,6 +2,7 @@ import "./app.scss";
 import {createDiv, createElement} from "./utils";
 import {WEATHERS} from "./constants";
 import {WeatherList} from "./components/weather-list/weather-list";
+import {InputVolume} from "./components/input-volume/input-volume";
 
 const state = {
     currentWeather: WEATHERS[0],
@@ -40,6 +41,11 @@ export const initApp = () => {
 
     page.append(title)
     page.append(weathers)
+    page.append(InputVolume({
+        onChange: (v2) => {
+            state.player.volume = v2;
+        }
+    }));
     refreshApp();
     return page;
 }
