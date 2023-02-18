@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env isDevServer=true NODE_ENV=development webpack serve",
-    "build": "npm run build:prod",
+    "eslint": "eslint \"@(src)/**/*.@(js)\" --cache --cache-location \"./.eslint-cache/\"",
+    "eslint-fix": "npm run eslint -- --fix",
+    "checks": "npm run eslint",
+    "build": "npm run checks && npm run build:prod",
     "build:prod": "cross-env NODE_ENV=production webpack",
     "build:dev": "cross-env NODE_ENV=development webpack"
   },
@@ -22,6 +25,8 @@
     "css-loader": "6.7.3",
     "dotenv": "16.0.3",
     "eslint": "8.34.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-import": "2.27.5",
     "html-webpack-plugin": "5.5.0",
     "mini-css-extract-plugin": "2.7.2",
     "postcss": "8.4.21",
