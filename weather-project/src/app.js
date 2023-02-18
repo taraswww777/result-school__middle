@@ -1,25 +1,30 @@
-import {createDiv, createElement} from "./utils";
+import "./app.scss";
+import {createDiv} from "./utils";
 import {WEATHERS} from "./constants";
-import {WeatherItem} from "./components/weather-item/weather-item.js";
+import {WeatherList} from "./components/weather-list/weather-list";
+
+const state = {
+    currentWeather: WEATHERS[0]
+};
 
 export const initApp = () => {
     const page = createDiv({className: 'app'});
+    const weathers = createDiv({className: 'app__weathers'});
 
-    const listWeathers = createElement('ul', {className: 'weathers'});
-
-    const onClickWeather = (params) => {
-        console.log('params:', params)
+    const refreshApp = () => {
+        page.style.backgroundImage = `url(${state.currentWeather.bgUrl})`
     }
 
-    WEATHERS.forEach((weather) => {
-        const itemWeather = createElement('li', {className: 'weathers__item'});
 
-        itemWeather.append(WeatherItem({weather, onClick: onClickWeather}));
+    const onClickWeather = (weather) => {
+        console.log('weather:', weather);
+        state.currentWeather = weather;
+        refreshApp();
+    }
 
-        listWeathers.append(itemWeather);
-    });
+    weathers.append(WeatherList({weathers: WEATHERS, onClickWeather}));
 
-    page.append(listWeathers)
-
+    page.append(weathers)
+    refreshApp();
     return page;
 }

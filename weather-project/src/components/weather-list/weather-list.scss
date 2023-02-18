@@ -1,0 +1,24 @@
+.weather-list {
+  width: 100%;
+  display: flex;
+  background: transparent;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    display: block;
+
+    &:first-child {
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
