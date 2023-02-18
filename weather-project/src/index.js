@@ -1,5 +1,5 @@
 import './index.scss';
-import {initApp} from './app';
+import { initApp } from './app';
 
 const rootApp = document.getElementById('root');
 
