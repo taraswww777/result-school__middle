@@ -1,7 +1,13 @@
 import './weather-item.scss';
-import { createElement } from '../../utils';
+import { createElement } from 'src/utils';
+import {Weather} from 'src/types';
 
-export const WeatherItem = ({ weather, onClick }) => {
+interface WeatherItemProps {
+  weather: Weather,
+  onClick: (weather: Weather) => void
+}
+
+export const WeatherItem = ({ weather, onClick }:WeatherItemProps) => {
   const itemWeather = createElement('div', {
     title: weather.code,
     className: 'weather-item',
