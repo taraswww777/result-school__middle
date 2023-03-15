@@ -1,5 +1,6 @@
 import S from './signup.module.css';
 import {useState} from "react";
+import {TextInput} from "@mantine/core";
 
 interface SignupProps {
     onSubmit: Function
@@ -16,6 +17,13 @@ interface FormState {
     email: string,
     sex: SEX
 }
+
+const Icon = () => (
+    <span><img
+        style={{maxWidth: 'calc(100% - 4px)', margin: '2px'}}
+        src="https://e7.pngegg.com/pngimages/973/63/png-clipart-email-computer-icons-symbol-email-miscellaneous-text.png"/>
+    </span>
+)
 
 export const Signup = ({onSubmit}: SignupProps) => {
     const [inputs, setInputs] = useState<Partial<FormState>>({sex: SEX.M});
@@ -45,8 +53,18 @@ export const Signup = ({onSubmit}: SignupProps) => {
                     </label>
                 </div>
                 <div>
-                    <label>Почта
-                        <input type="email" name="email" value={inputs?.email}/>
+                    <label>Почта1
+                        <input type="email" name="email1" value={inputs?.email}/>
+                    </label>
+                </div>
+                <div>
+                    <label>Почта2
+                        <TextInput
+                            type="email"
+                            name="email2"
+                            value={inputs?.email}
+                            icon={<Icon/>}
+                        />
                     </label>
                 </div>
                 <div>
