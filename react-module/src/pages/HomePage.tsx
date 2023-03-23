@@ -1,11 +1,12 @@
-import React from "react";
-import {Link} from "react-router-dom";
-export const HomePage = ()=>{
+import React, {FC} from "react";
+import {BasePage} from "./BasePage";
+
+export const HomePage: FC = () => {
     return (
-        <div>
-            <ul>
-                <li><Link to={'/otherTasks'}>OtherTasksPage</Link></li>
-            </ul>
-        </div>
+        <BasePage>
+            <div>
+                HomePage
+            </div>
+        </BasePage>
     )
 }

@@ -1,0 +1,13 @@
+.BasePage {
+  display: flex;
+  flex-wrap: nowrap;
+
+  &__nav {
+    width: 200px;
+  }
+
+  &__main {
+    flex-grow: 1;
+    padding: 0 20px;
+  }
+}
