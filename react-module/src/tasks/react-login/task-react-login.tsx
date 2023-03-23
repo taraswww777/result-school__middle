@@ -1,5 +1,5 @@
-import {Signup} from "../../components/signup";
 import React from "react";
+import {Signup} from "./components/signup";
 
 export const TaskReactLogin = () => {
     const onLogin = () => {

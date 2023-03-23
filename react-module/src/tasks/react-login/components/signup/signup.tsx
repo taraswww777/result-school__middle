@@ -1,5 +1,5 @@
 import S from './signup.module.css';
-import {useState} from "react";
+import React, {useState} from "react";
 import {TextInput} from "@mantine/core";
 
 interface SignupProps {
@@ -95,5 +95,5 @@ export const Signup = ({onSubmit}: SignupProps) => {
                 </div>
             </form>
         </div>
-    )
-}
+    );
+};

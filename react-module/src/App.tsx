@@ -1,16 +1,9 @@
 import React from 'react';
-import './App.css';
-import {TaskReactLogin} from "./tasks/react-login";
+import {RouterProvider} from "react-router-dom";
+import {router} from "./router";
 
-function App() {
+export const App = () => {
     return (
-        <div className="App">
-            <header>React App</header>
-            <main>
-                <TaskReactLogin/>
-            </main>
-        </div>
+        <RouterProvider router={router}/>
     );
 }
-
-export default App;
