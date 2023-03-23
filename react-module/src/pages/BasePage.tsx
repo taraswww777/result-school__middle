@@ -5,7 +5,8 @@ import {CFC} from "../types";
 import S from "./BasePageStyle.module.scss";
 
 const links = [
-    {link: '/otherTasks', label: 'OtherTasksPage'}
+    {link: '/otherTasks', label: 'OtherTasksPage'},
+    {link: '/routerTask', label: 'routerTask'}
 ];
 
 export const BasePage: CFC = ({children}) => {
