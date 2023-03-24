@@ -1,7 +1,15 @@
 import React, {FC} from "react";
 import S from './RouterTask.module.scss'
-import {Link} from "react-router-dom";
+import {createBrowserRouter, createRoutesFromElements, Link, Route} from "react-router-dom";
 
+
+const router = createBrowserRouter(
+    createRoutesFromElements(
+        <Route path="/" element={<Root />}>
+            <Route path="dashboard" element={<Dashboard />} />
+        </Route>
+    )
+);
 export const RouterTask: FC = () => {
     return (
         <div className={S.RouterTask}>
@@ -11,7 +19,9 @@ export const RouterTask: FC = () => {
                     <li><Link to={'routerTask/categories'}>Категории</Link></li>
                 </ul>
             </nav>
+            <main>
 
+            </main>
         </div>
     )
 }
